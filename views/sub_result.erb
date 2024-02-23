@@ -1,14 +1,17 @@
-<h1>Subtraction</h1>
+<!-- views/sub_result.erb -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Target: Omnicalc 2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
 
-<dl>
-  <dt>First number</dt>
-  <dd><%= @first_num %></dd>
-
-  <dt>Second number</dt>
-  <dd><%= @second_num %></dd>
-
-  <dt>Result</dt>
-  <dd><%= @result %></dd>
-</dl>
-
-<a href="/subtract">Do another subtraction</a>
+  <body>
+    <!-- Result of Subtraction -->
+    <h1>Subtraction Result:</h1>
+    <p>First Number: <%= @first_num %></p>
+    <p>Second Number: <%= @second_num %></p>
+    <p>Difference: <%= @result %></p>
+  </body>
+</html>

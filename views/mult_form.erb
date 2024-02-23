@@ -1,5 +1,23 @@
-<h1>New multiplication</h1>
+<!-- views/mult_form.erb -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Target: Omnicalc 2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
 
-<form action="/">
+  <body>
+    <h1>New multiplication</h1>
 
-</form>
+    <form action="/wizard_multiply" method="post">
+      <label for="first_field">Multiply this:</label>
+      <input type="text" id="first_field" name="first_num">
+
+      <label for="second_field">by this:</label>
+      <input type="text" id="second_field" name="second_num">
+
+      <button>Multiply!</button>
+    </form>
+  </body>
+</html>

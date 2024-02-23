@@ -1,17 +1,23 @@
-<h1>New division</h1>
+<!-- views/divform.erb -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Target: Omnicalc 2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
 
-<form action="/wizard_divide">
-  <label for="">
-    Divide this:
-  </label>
-  <input id="" name="first_number" text="text">
+  <body>
+    <h1>New division</h1>
 
-  <label for="">
-    by this:
-  </label>
-  <input id="" name="second_num" text="text">
+    <form action="/wizard_divide" method="post">
+      <label for="first_field">Divide this:</label>
+      <input type="text" id="first_field" name="first_num">
 
-  <button>
-    Divide!
-  </button>
-</form>
+      <label for="second_field">by this:</label>
+      <input type="text" id="second_field" name="second_num">
+
+      <button>Divide!</button>
+    </form>
+  </body>
+</html>

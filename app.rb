@@ -1,44 +1,59 @@
-require "sinatra"
-require "sinatra/reloader"
+# app.rb
+require 'sinatra'
 
-get("/") do
-  redirect("/add")
+# Define routes
+get '/' do
+  erb :layout
 end
 
-get("/ad") do
-  erb(:add_form)
+get '/add' do
+  erb :add_form
 end
 
-get("/wizard_add") do
-  @first_num = params.fetch("first_num").to_f
-
-  @result = @first_num + @second_num
-  erb(:add_result)
+post '/wizard_add' do
+  @first_num = params[:first_num].to_f  # Get the first number from the form as a float
+  @second_num = params[:second_num].to_f # Get the second number from the form as a float
+  @result = @first_num + @second_num    # Calculate the sum
+  erb :add_result  # Render the result page
 end
 
-get("/subtract") do
-  erb(:sub_form)
+
+get '/subtract' do
+  erb :subtraction_form
 end
 
-get("/wizard_subtract") do
-  @first_num = params.fetch("first_num").to_f
-  @second_num = params.fetch("second_num").to_f
-
-  erb(:sub_result)
+post '/wizard_subtract' do
+  @first_num = params[:first_num].to_f  # Get the first number from the form as a float
+  @second_num = params[:second_num].to_f # Get the second number from the form as a float
+  @result = @first_num - @second_num    # Calculate the difference
+  erb :sub_result  # Render the result page
 end
 
-get("/multiply") do
-  erb(:multiplication_form)
+get '/multiply' do
+  erb :mult_form
 end
 
-get("/wizard multiply") do
-  erb(:mult_result)
+post '/wizard_multiply' do
+  @first_num = params[:first_num].to_f  # Get the first number from the form as a float
+  @second_num = params[:second_num].to_f # Get the second number from the form as a float
+  @result = @first_num * @second_num    # Calculate the product
+  erb :mult_result  # Render the result page
 end
 
-get("/divide") do
-  erb(:div_form)
+
+get '/divide' do
+  erb :divform
 end
 
-get("/wizard_divide") do
-  erb(:div_result)
+post '/wizard_divide' do
+  @first_num = params[:first_num].to_f  # Get the first number from the form as a float
+  @second_num = params[:second_num].to_f # Get the second number from the form as a float
+  
+  # Check if the second number is not zero to avoid division by zero error
+  if @second_num != 0
+    @result = @first_num / @second_num    # Calculate the quotient
+    erb :div_result  # Render the result page
+  else
+    erb :div_zero_error # Render an error page for division by zero
+  end
 end

@@ -1,14 +1,17 @@
-<h1>Multiplication</h1>
+<!-- views/mult_result.erb -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Target: Omnicalc 2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+  </head>
 
-<dl>
-  <dt>First number</dt>
-  <dd><%= @first_number %></dd>
-
-  <dt>Second number</dt>
-  <dd><%= @second_num %></dd>
-
-  <dt>Result</dt>
-  <dd><%= @result %></dd>
-</dl>
-
-<a href="/multiply">Do another multiplication</a>
+  <body>
+    <!-- Result of Multiplication -->
+    <h1>Multiplication Result:</h1>
+    <p>First Number: <%= @first_num %></p> <!-- Display the first number -->
+    <p>Second Number: <%= @second_num %></p>
+    <p>Product: <%= @result %></p>
+  </body>
+</html>

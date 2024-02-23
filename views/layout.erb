@@ -1,7 +1,8 @@
+<!-- views/layout.erb -->
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sinatra Omnicalc 2</title>
+    <title>Target: Omnicalc 2</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
   </head>
@@ -26,6 +27,16 @@
         </td>
       </tr>
     </table>
+
+    <!-- Navigation Links -->
+    <ul>
+      <li><a href="/add">Add</a></li>
+      <li><a href="/subtract">Subtract</a></li>
+      <li><a href="/multiply">Multiply</a></li>
+      <li><a href="/divide">Divide</a></li>
+    </ul>
+
+    <!-- Render content -->
     <%= yield %>
   </body>
 </html>
